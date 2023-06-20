@@ -1,7 +1,9 @@
 const {app, BrowserWindow, ipcMain} = require("electron");
 const path = require("path");
 const fs = require("fs");
-const os = "Windows";
+
+
+var os = process.platform;
 
 const openWindow = () => {
     const win  = new BrowserWindow({
@@ -37,7 +39,6 @@ const openWindow = () => {
 
     ipcMain.on("html", (event, options)=>{
         fs.writeFileSync("Created with electron.txt", os, "utf-8");
-        event.reply("saved");
     });
 
 

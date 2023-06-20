@@ -4,13 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>electron</title>
+    <style>
+
+        * {
+            background-color: #F4D3D3;
+        }
+
+
+        body {
+            margin: 0 auto;
+        }
+
+        .head {
+            padding: 2rem;
+            font-size: 2rem;
+            color: #090580;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-align: center;
+   
+        }
+
+        main {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            
+        }
+
+        button {           
+            border-radius: 2rem;
+            background-color: #E8A9A9;
+            height: 3rem;
+            width: 8rem;
+            justify-content: center;
+            font-size: bold;
+            border-color: #090580;
+            color: #46458c;
+        }
+        
+    </style>
 </head>
 <body>
-    <button id="btn">OS info</button>
-    <script > 
-        const {ipcRenderer} = require("electron");
-        const btn = document.getElementById("btn")
-        btn.onclick = () => ipcRenderer.send("html")
-    </script>
+    <header>
+        <div class="head">This is electron app</div>
+    </header>
+
+    <main>
+        <button id="btn">OS info</button>
+        <script >
+            const {ipcRenderer} = require("electron");
+            const btn = document.getElementById("btn")
+            btn.onclick = () => ipcRenderer.send("html")
+        </script>
+    </main>
 </body>
 </html>
